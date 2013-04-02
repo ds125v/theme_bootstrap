@@ -1,15 +1,10 @@
-YUI().use("node", function(Y) {
-    var btn_Click = function(e) {
-        console.log('test');
-        Y.one('.btn-navbar').addClass('active');
-        togglemenu = Y.one('.nav-collapse');
-        if (togglemenu.hasClass('active')) {
-            togglemenu.setStyle('height','0px');
-            togglemenu.removeClass('active');
-        } else {
-            togglemenu.addClass('active');
-            togglemenu.setStyle('height','auto');
-        }
+YUI().use('node', function(Y) {
+    var toggleShow = function(e) {
+        // Toggle the active class on both the clicked .btn-navbar and the .nav-collapse.
+        // Our CSS will set the height for these
+        var togglemenu = Y.one('.nav-collapse');
+        togglemenu.toggleClass('active');
+        this.toggleClass('active');
     };
-    Y.on("click", btn_Click, ".btn-navbar");
+    Y.delegate('click', toggleShow, Y.config.doc, '.btn-navbar');
 });
