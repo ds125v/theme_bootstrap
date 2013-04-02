@@ -15,12 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Configuration for the Bootstrap theme
+ * Configuration for Moodle's bootstrap theme.
  *
+ * DO NOT MODIFY THIS THEME!
+ * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
+ *
+ * For full information about creating Moodle themes, see:
+ * http://docs.moodle.org/dev/Themes_2.0
  *
  * @package   Moodle Bootstrap theme
  * @copyright 2013 Bas Brands. www.sonsbeekmedia.nl
- * @authors Bas Brands, David Scotson
+ * @authors   Bas Brands, David Scotson
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -152,6 +157,7 @@ $THEME->javascripts = array(
     'moodlebootstrap',
     'bootstrapcollapse',
     'bootstrapdropdown',
+    'headercollapse',
 );
 
 if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8') || strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 7') ) {
