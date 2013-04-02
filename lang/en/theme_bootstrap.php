@@ -58,7 +58,7 @@ Website: <a href="http://www.basbrands.nl">www.basbrands.nl</a><br>
 
 <h3>Reporting bugs</h3>
 
-<p>You can report bugs on the <a href="https://github.com/bmbrands/theme_bootstrap/issues">github page</a> for this theme or 
+<p>You can report bugs on the <a href="https://github.com/bmbrands/theme_bootstrap/issues">github page</a> for this theme or
 on the Moodle tracker</p>
 
 <h3>More information</h3>
