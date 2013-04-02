@@ -1,7 +1,7 @@
 YUI.add('gallery-bootstrap-engine', function(Y) {
 
 /**
- * Bootstrap Engine for Plug and Play widgets. This class is meant to be used in 
+ * Bootstrap Engine for Plug and Play widgets. This class is meant to be used in
  * conjuntion with the Injection Engine (gallery-bootstrap-engine). It facilitates the use of
  * an iframe as a sandbox to execute certain tasks and/or a presention element.
  *
@@ -123,9 +123,9 @@ Y.extend(BootstrapEngine, Y.Base, {
             use = Y.Array(instance.EXTRAS),
             host,
             callBootFn = function () {
-                // finishing the initialization process async to facilitate 
+                // finishing the initialization process async to facilitate
                 // addons to hook into _boot/_init/_bind/_ready if needed.
-                // todo: after migrating to 3.4 this is not longer needed, and we can use initializer and destroyer 
+                // todo: after migrating to 3.4 this is not longer needed, and we can use initializer and destroyer
                 // in each extension
                 Y.later(0, instance, function() {
                     instance._boot();
@@ -181,14 +181,14 @@ Y.extend(BootstrapEngine, Y.Base, {
         // if the connect process wants to automatically execute the _ready, it should returns true.
         if (auto) {
             // connecting the bootstrap with the injection engine
-            instance._ready();        
+            instance._ready();
         }
         // marking the system as ready
         instance._set('ready', true);
     },
 
     /**
-     * Connects the bootstrap with the injection engine running in the parent window. This method 
+     * Connects the bootstrap with the injection engine running in the parent window. This method
      * defines the hand-shake process between them. This method is meant to be called by
      * the bootstrap engine _init method to start the connection.
      *
@@ -220,7 +220,7 @@ Y.extend(BootstrapEngine, Y.Base, {
     },
 
     /**
-     * Defines the binding logic for the bootstrap engine, listening for some attributes 
+     * Defines the binding logic for the bootstrap engine, listening for some attributes
      * that might change, and defining the set of events that can be exposed to the injection engine.
      * Overrides/Extends this prototype method to do your mojo.
      *
@@ -233,7 +233,7 @@ Y.extend(BootstrapEngine, Y.Base, {
 
     /**
      * This method will be called only if the connect response with "true", you can use this
-     * to control the state of the initialization from the injection engine since it might 
+     * to control the state of the initialization from the injection engine since it might
      * take some time to load the stuff in the iframe, and the user might interact with the page
      * invalidating the initialization routine.
      * Overrides/Extends this prototype method to do your mojo.
@@ -247,7 +247,7 @@ Y.extend(BootstrapEngine, Y.Base, {
 
      /**
       * The iframe that holds the bootstrap engine sometimes is used as a UI overlay.
-      * In this case, you can style it through this method. By default, it will set 
+      * In this case, you can style it through this method. By default, it will set
       * border, frameBorder, marginWidth, marginHeight, leftMargin and topMargin to
       * cero, and allowTransparency to true.
       *
