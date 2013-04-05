@@ -141,7 +141,7 @@
     }
     .fp-upload-form td.mdl-right,
     .fp-upload-form td.mdl-left,
-    .fp-login-form .input, 
+    .fp-login-form .input,
     .file-picker .fp-login-form .fp-login-input label,
     .file-picker td.label {
         display: block;
@@ -272,12 +272,13 @@
 
 @media (max-width: 979px) {
     .nav-collapse {
+         height: 0;
         .nav > li > a {
             color: @grayDark;
         }
         .nav > li > a:hover,
-        .nav > li > a:focus, 
-        .dropdown-menu a:hover, 
+        .nav > li > a:focus,
+        .dropdown-menu a:hover,
         .dropdown-menu a:focus,
         .dropdown-submenu a:focus,
         .dropdown-submenu a:hover,
@@ -289,6 +290,10 @@
             color: @grayDark;
         }
     }
+    .nav-collapse.active {
+        height: auto;
+    }
+
 }
 
 @media (max-width: 768px) {
