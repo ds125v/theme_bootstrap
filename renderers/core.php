@@ -59,7 +59,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * Overriding the custom_menu function ensures the custom menu is
      * always shown, even if no menu items are configured in the global
      * theme settings page.
-     * We use the sitename as the first menu item
      */
     public function custom_menu($custommenuitems = '') {
         global $CFG;
@@ -80,10 +79,6 @@ class theme_bootstrap_core_renderer extends core_renderer {
      */
 
     protected function render_custom_menu(custom_menu $menu) {
-        // If the menu has no children return an empty string.
-        if (!$menu->has_children()) {
-            return '';
-        }
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
         if ($this->page->course != SITEID and !empty($this->page->course->lang)) {
@@ -94,6 +89,9 @@ class theme_bootstrap_core_renderer extends core_renderer {
             $addlangmenu = false;
         }
 
+        if (!$menu->has_children() && $addlangmenu === false) {
+            return '';
+        }
         if ($addlangmenu) {
             $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 999);
             foreach ($langs as $langtype => $langname) {
