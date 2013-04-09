@@ -161,6 +161,7 @@ echo $OUTPUT->doctype() ?>
 
 <footer id="page-footer">
     <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')) ?></p>
+    <?php echo $OUTPUT->login_info(); ?>
     <?php echo $OUTPUT->standard_footer_html(); ?>
 </footer>
 
