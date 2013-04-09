@@ -86,7 +86,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
-            if ($this->page->course != SITEID and !empty($this->page->course->lang)) {
+        if ($this->page->course != SITEID and !empty($this->page->course->lang)) {
             // Do not show lang menu if language forced.
             $addlangmenu = false;
         }
@@ -95,7 +95,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
 
         if ($addlangmenu) {
-            $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 10);
+            $language = $menu->add(get_string('language'), new moodle_url('#'), get_string('language'), 999);
             foreach ($langs as $langtype => $langname) {
                 $language->add($langname,
                 new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
