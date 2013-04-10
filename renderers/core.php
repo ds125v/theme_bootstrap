@@ -155,4 +155,60 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
         return $content;
     }
+
+    /**
+     * Renders tabs
+     *
+     * This function replaces print_tabs() used before Moodle 2.5 but with slightly different arguments
+     *
+     * @param array $tabs array of tabs, each of them may have it's own ->subtree
+     * @param string|null $selected which tab to mark as selected, the parent tab will
+     *     automatically be marked as selected too
+     * @param array|string|null $inactive list of ids of inactive tabs
+     * @return string
+     */
+    public function tabtree($tabs, $selected = null, $inactive = array()) {
+        $lis = array();
+        if (!is_array($inactive)) {
+            $inactive = array($inactive);
+        }
+        $subtree = '';
+        foreach ($tabs as $tab) {
+            if ($this->child_tab_selected($tab, $selected)) {
+                $lis[] = $this->active_tab($tab->text);
+                $subtree = $this->tabtree($tab->subtree, $selected, $inactive);
+            } else if ($tab->id === $selected) {
+                $lis[] = $this->active_tab($tab->text);
+            } else if (in_array($tab->id, $inactive)) {
+                $lis[] = $this->disabled_tab($tab->text);
+            } else {
+                $lis[] = $this->tab($tab->text, $tab->link);
+            }
+        }
+        return $this->tab_row(implode($lis)) . $subtree;
+    }
+
+    public function child_tab_selected($tab, $selected) {
+        if (!isset($tab->subtree)) {
+            return false;
+        }
+        foreach ($tab->subtree as $subtab) {
+            if ($subtab->id === $selected) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public function tab_row($content) {
+        return "<ul class=\"nav nav-tabs\">$content</ul>";
+    }
+    public function active_tab($text, $subtree = '') {
+        return "<li class=\"active\"><a>$text</a>$subtree</li>";
+    }
+    public function disabled_tab($text) {
+        return "<li class=\"disabled\"><a>$text</a></li>";
+    }
+    public function tab($text, $href) {
+        return "<li><a href=\"$href\">$text</a></li>";
+    }
 }
