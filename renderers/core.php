@@ -156,6 +156,7 @@ class theme_bootstrap_core_renderer extends core_renderer {
         return $content;
     }
 
+
     /**
      * Renders tabs
      *
@@ -199,15 +200,19 @@ class theme_bootstrap_core_renderer extends core_renderer {
         }
         return false;
     }
+
     public function tab_row($content) {
         return "<ul class=\"nav nav-tabs\">$content</ul>";
     }
+
     public function active_tab($text, $subtree = '') {
         return "<li class=\"active\"><a>$text</a>$subtree</li>";
     }
+
     public function disabled_tab($text) {
         return "<li class=\"disabled\"><a>$text</a></li>";
     }
+
     public function tab($text, $href) {
         return "<li><a href=\"$href\">$text</a></li>";
     }
