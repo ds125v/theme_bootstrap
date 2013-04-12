@@ -193,6 +193,32 @@
         width: auto;
     }
 
+    // Fixes for fontsizes on phones.
+    h1 { font-size: @baseFontSize * 2; } // ~38px
+    h2 { font-size: @baseFontSize * 1.75; } // ~32px
+    h3 { font-size: @baseFontSize * 1.50; } // ~24px
+    h4 { font-size: @baseFontSize * 1.25; } // ~18px
+    h5 { font-size: @baseFontSize; } // 14px
+    h6 { font-size: @baseFontSize * 0.85; } // ~12px
+
+    // Navbar margins too big
+    .navbar-fixed-top {
+        margin-bottom: 0;
+    }
+    .loginbox {
+        margin: 0;
+        .signupform,
+        h2,
+        .subcontent {
+            text-align: left;
+        }
+        .loginform .form-input input[type="text"] {
+             width: 8em;
+         }
+    }
+    .loginbox.twocolumns {
+        margin: 0;
+    }
 }
 
 // Stuart's 2,1,3 layout
