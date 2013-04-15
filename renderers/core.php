@@ -169,24 +169,24 @@ class theme_bootstrap_core_renderer extends core_renderer {
      * @return string
      */
     public function tabtree($tabs, $selected = null, $inactive = array()) {
-        $lis = array();
+        $row = array();
         if (!is_array($inactive)) {
             $inactive = array($inactive);
         }
         $subtree = '';
         foreach ($tabs as $tab) {
             if ($this->child_tab_selected($tab, $selected)) {
-                $lis[] = $this->active_tab($tab->text);
+                $row[] = $this->active_tab($tab->text);
                 $subtree = $this->tabtree($tab->subtree, $selected, $inactive);
             } else if ($tab->id === $selected) {
-                $lis[] = $this->active_tab($tab->text);
+                $row[] = $this->active_tab($tab->text);
             } else if (in_array($tab->id, $inactive)) {
-                $lis[] = $this->disabled_tab($tab->text);
+                $row[] = $this->disabled_tab($tab->text);
             } else {
-                $lis[] = $this->tab($tab->text, $tab->link);
+                $row[] = $this->tab($tab->text, $tab->link);
             }
         }
-        return $this->tab_row(implode($lis)) . $subtree;
+        return $this->tab_row(implode($row)) . $subtree;
     }
 
     public function child_tab_selected($tab, $selected) {
