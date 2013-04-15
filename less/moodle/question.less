@@ -215,17 +215,18 @@
 .que .qtext {
     margin-bottom: 1.5em;
 }
-.que .correct {
+.que .correctness {
     .label;
-    background-color: @successText;
-}
-.que .notanswered,
-.que .incorrect {
-    .label;
-    background-color: @errorText;
-}
-.que .partiallycorrect {
-    background-color: @warningBackground;
+    &.partiallycorrect {
+        background-color: @orange;
+    }
+    &.notanswered,
+    &.incorrect {
+        background-color: @errorText;
+    }
+    &.correct {
+        background-color: @successText;
+    }
 }
 .que .validationerror {
     color: @errorText;
