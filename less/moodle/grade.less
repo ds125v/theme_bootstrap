@@ -59,7 +59,7 @@
 }
 .gradetreebox td.colspan,
 .gradetreebox tr.category .cell {
-    background-color: #DDD;
+    background-color: #ddd;
 }
 .gradetreebox th.actions {
     white-space: nowrap;
@@ -75,7 +75,7 @@
     white-space: nowrap;
 }
 .gradetreebox span.actionlink {
-    color: blue;
+    color: @linkColor;
 }
 .gradetreebox span.actionlink:hover {
     text-decoration: underline;
@@ -118,15 +118,15 @@
 }
 #page-grade-grading-manage .action:hover {
     text-decoration: none;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 #page-grade-grading-manage #actionresultmessagebox {
-    background-color: #D2EBFF;
+    background-color: @infoBackground;
     width: 60%;
     margin: 1em auto;
     text-align: center;
     padding: 0.5em;
-    border: 2px solid #CCC;
+    border: 2px solid #ccc;
     text-align: center;
     .border-radius(5px);
     position: relative;
@@ -136,33 +136,34 @@
     right: 0;
     top: -1.2em;
     color: #666;
-font-size: 80%}
+    font-size: @fontSizeSmall;
+}
 #page-grade-grading-manage .definition-name .status {
     font-weight: normal;
     text-transform: uppercase;
     font-size: 60%;
     padding: 0.25em;
-    border: 1px solid #EEE;
+    border: 1px solid #eee;
     .border-radius(5px);
 }
 #page-grade-grading-manage .definition-name .status.ready {
-    background-color: #e7f1c3;
-    border-color: #AAEEAA;
+    background-color: @successBackground;
+    border-color: @successBorder;
 }
 #page-grade-grading-manage .definition-name .status.draft {
-    background-color: #f3f2aa;
-    border-color: #EEEE22;
+    background-color: @warningBackground;
+    border-color: @warningBorder;
 }
 #page-grade-grading-manage .definition-preview {
     width: 50%;
     margin: 1em auto;
-    border: 1px solid #EEE;
+    border: 1px solid #eee;
     padding: 1em;
 }
 #page-grade-grading-pick .template-name {
     clear: both;
     padding: 3px;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 #page-grade-grading-pick .template-name .type {
     font-weight: normal;
@@ -173,12 +174,12 @@ font-size: 80%}
     .border-radius(5px);
 }
 #page-grade-grading-pick .template-name .type.shared {
-    background-color: #e7f1c3;
-    border-color: #AAEEAA;
+    background-color: @successBackground;
+    border-color: @successBorder 
 }
 #page-grade-grading-pick .template-name .type.ownform {
-    background-color: #d2ebff;
-    border-color: #AACCEE;
+    background-color: @infoBackground;
+    border-color: @infoBorder;
 }
 #page-grade-grading-pick .template-description {
     margin-bottom: 1em;
@@ -188,7 +189,7 @@ font-size: 80%}
 #page-grade-grading-pick .template-preview {
     width: 50%;
     float: right;
-    border: 1px solid #EEE;
+    border: 1px solid #eee;
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -204,14 +205,14 @@ font-size: 80%}
     border: 2px solid transparent;
 }
 #page-grade-grading-pick .template-actions .action.pick {
-    background-color: #EEE;
-    border: 2px solid #CCC;
+    background-color: #eee;
+    border: 2px solid #ccc;
     .border-radius(3px);
 }
 #page-grade-grading-pick .template-actions .action:hover {
     text-decoration: none;
-    background-color: #F6F6F6;
-    border: 2px solid #CCC;
+    background-color: #f6f6f6;
+    border: 2px solid #ccc;
     .border-radius(3px);
 }
 #page-grade-grading-pick .template-actions .action .action-text {
@@ -223,7 +224,7 @@ font-size: 80%}
 #page-grade-grading-pick .template-preview-confirm {
     width: 50%;
     margin: 1em auto;
-    border: 1px solid #EEE;
+    border: 1px solid #eee;
     padding: 1em;
 }
 #page-grade-grading-pick .singlebutton {
@@ -233,67 +234,67 @@ font-size: 80%}
 // replaces grades/report/grader/styles.css
 
 table#user-grades tr td.overridden {
-    background-color:#F3E4C0;
+    background-color: #F3E4C0;
 }
 table#user-grades tr.odd td.overridden {
-    background-color:#EFD9A4;
+    background-color: #EFD9A4;
 }
 table#user-grades tr td.ajaxoverridden {
-    background-color:#FFE3A0;
+    background-color: #FFE3A0;
 }
 table#user-grades tr.odd td.ajaxoverridden {
-    background-color:#FFDA83;
+    background-color: #FFDA83;
 }
 table#user-grades tr.even td.excluded {
-    background-color:#EABFFF;
+    background-color: #EABFFF;
 }
 table#user-grades tr.odd td.excluded {
-    background-color:#E5AFFF;
+    background-color: #E5AFFF;
 }
 
 table#user-grades tr.groupavg td.cell {
-    background-color:#efffef;
-    font-weight:700;
-    color:#006400;
+    background-color: @sucessBackground;
+    font-weight: 700;
+    color: @successText;
 }
 
 table#user-grades td.cat,
 table#user-grades td.course {
-    font-weight:700;
+    font-weight: 700;
 }
 
 .path-grade-report-grader #overDiv table {
-margin:0;
+    margin: 0;
 }
 .path-grade-report-grader #overDiv table td.feedback {
-border:0;
+    border: 0;
 }
 .path-grade-report-grader #overDiv .feedback {
-font-size: @fontSizeMini;
-background-color:#ABF;
-font-weight:400;
+    font-size: @fontSizeMini;
+    background-color: #abf;
+    font-weight: 400;
 }
 .path-grade-report-grader #overDiv .caption {
-font-size: @fontSizeMini;
-background-color:#56C;
-color:#CCF;
-font-weight:700;
+    font-size: @fontSizeMini;
+    background-color: #56C;
+    color: #CCF;
+    font-weight: 700;
 }
 .path-grade-report-grader #overDiv .intersection {
-font-size: @fontSizeMini;
-background-color:#ABF;
-color:#000;
-font-weight:400;
+    font-size: @fontSizeMini;
+    background-color: #ABF;
+    color: @textColor;
+    font-weight: 400;
 }
 .path-grade-report-grader #overDiv .intersectioncaption {
-background-color:#56C;
-color:#CCF;
-font-weight:700;
+    background-color: #56C;
+    color: #CCF;
+    font-weight: 700;
 }
 
 .path-grade-report-grader div.gradeparent,
 table#user-grades td.ajax {
-    text-align:left;
+    text-align: left;
 }
 
 .path-grade-report-grader.dir-rtl  div.gradeparent,
@@ -326,7 +327,7 @@ table#user-grades .userpic {
 }
 
 table#user-grades .quickfeedback {
-    border:1px dashed #000;
+    border: 1px dashed #000;
     margin-left: 10px;
 }
 .dir-rtl table#user-grades .quickfeedback {
@@ -335,7 +336,7 @@ table#user-grades .quickfeedback {
 }
 
 .path-grade-report-grader #siteconfiglink {
-    text-align:right;
+    text-align: right;
 }
 
 table#user-grades .hidden,
@@ -357,72 +358,72 @@ table#user-grades .datesubmitted {
 }
 
 .path-grade-report-grader a.quickedit {
-line-height:1em;
-display:block;
-float:right;
-clear:none;
-font-size:9px;
-background-color:transparent;
-margin:.1em 0 0;
+    line-height: 1em;
+    display: block;
+    float: right;
+    clear: none;
+    font-size: 9px;
+    background-color: transparent;
+    margin: .1em 0 0;
 }
 
 .path-grade-report-grader a.quickedit2 {
-display:block;
-float:right;
-clear:none;
-background-color:transparent;
-margin:1.3em 0 0;
+    display: block;
+    float: right;
+    clear: none;
+    background-color: transparent;
+    margin: 1.3em 0 0;
 }
 
 .path-grade-report-grader table#quick_edit {
-border:1px solid #cecece;
-margin:0 auto;
+    border: 1px solid #cecece;
+    margin: 0 auto;
 }
 
 .path-grade-report-grader table#quick_edit td {
-vertical-align:middle;
-border:1px solid #cecece;
-text-align:left;
-margin:0;
-padding:5px;
+    vertical-align: middle;
+    border: 1px solid #cecece;
+    text-align: left;
+    margin: 0;
+    padding: 5px;
 }
 
 .path-grade-report-grader table#quick_edit td img {
-border:3px double #cecece;
-vertical-align:middle;
-padding:0;
+    border: 3px double #cecece;
+    vertical-align: middle;
+    padding: 0;
 }
 
 .path-grade-report-grader table#quick_edit td.fullname {
-border-left:0;
-padding-left:5px;
+    border-left: 0;
+    padding-left: 5px;
 }
 
 .path-grade-report-grader table#quick_edit td.picture {
-border-right:0;
+    border-right: 0;
 }
 
 .path-grade-report-grader table#quick_edit td.finalgrade input {
-width:5em;
+    width: 5em;
 }
 
 .path-grade-report-grader h1 {
-text-align:center;
-clear:both;
+    text-align: center;
+    clear: both;
 }
 
 .path-grade-report-grader input.center {
-margin:10px auto 0;
+    margin: 10px auto 0;
 }
 
 .path-grade-report-grader .lefttbody {
-    width:auto;
-    vertical-align:middle;
+    width: auto;
+    vertical-align: middle;
 }
 
 .path-grade-report-grader .left_scroller {
-    float:left;
-    clear:none;
+    float: left;
+    clear: none;
     #fixed_column .heading th.header,
     #fixed_column td,
     #fixed_column th {
@@ -459,7 +460,7 @@ table#fixed_column td,
 table#user-grades td,
 table#user-grades th,
 table#user-grades input {
-    font-size:10px;
+    font-size: 10px;
     margin: 0;
     padding: 0 2px;
     vertical-align: middle;
@@ -477,16 +478,16 @@ table#user-grades input {
 }
 
 .path-grade-report-grader span.gradepass {
-    color:#298721;
+    color: @successText;
 }
 
 .path-grade-report-grader span.gradefail {
-    color:#890d0d;
+    color: @errorText;
 }
 
 .path-grade-report-grader .gradeweight {
-    color:#461d7c;
-    font-weight:700;
+    color: #461d7c;
+    font-weight: 700;
 }
 
 .path-grade-report-grader td select {
@@ -499,7 +500,7 @@ table#user-grades input {
 }
 
 .path-grade-report-grader .grade_icons img.ajax {
-    float:right;
+    float: right;
 }
 
 .path-grade-report-grader .gradestable th.user,
@@ -540,7 +541,7 @@ table#user-grades tr.controls td,
 
 .path-grade-report-grader table th.user,
 .path-grade-report-grader table td.userfield {
-    text-align:left;
+    text-align: left;
 }
 
 .path-grade-report-grader .usersuspended a:link,
@@ -560,7 +561,7 @@ table#user-grades tr.controls td,
     border-width: 1px;
     left: 0;
     padding: 2px 5px;
-    font-size: 0.7em;
+    font-size: @fontSizeMini;
 }
 
 .path-grade-report-grader .yui3-overlay .fullname {
