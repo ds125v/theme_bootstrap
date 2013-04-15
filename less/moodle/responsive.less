@@ -62,29 +62,34 @@
  }
 
 @media (max-width: 480px) {
-    // copied from tabs.less stacked-navs
-    .tabtree > ul {
-        border: none;
+    .nav.nav-tabs {
     }
-    .tabtree > ul > li {
-        float: none;
+    // copied from navs.less nav-stacked
+    .nav-tabs > li {
+      float: none;
     }
-    .tabtree > ul > li > a {
-        border: 1px solid #ddd;
-        .border-radius(0);
+    .nav-tabs > li > a {
+      margin-right: 0; // no need for the gap between nav items
     }
-    .tabtree > ul > li.first > a {
-        .border-top-radius(4px);
+    .nav-tabs {
+      border-bottom: 0;
     }
-    .tabtree > ul > li.last > a,
-    .tabtree > ul > li.last > a:hover {
-        border: 1px solid #ddd;
-        .border-bottom-radius(4px);
+    .nav-tabs > li > a {
+      border: 1px solid #ddd;
+      .border-radius(0);
     }
-    .tabtree > ul > li > a:hover,
-    .tabtree > ul > li > a:focus {
-        border-color: #ddd;
-        z-index: 2;
+    .nav-tabs > li:first-child > a {
+      .border-top-radius(4px);
+    }
+    .nav-tabs > li:last-child > a,
+    .nav-tabs > li:last-child.active > a {
+      border: 1px solid #ddd;
+      .border-bottom-radius(4px);
+    }
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
+      border-color: #ddd;
+      z-index: 2;
     }
     .file-picker .fp-repo-items,
     .file-picker .fp-repo-area {
