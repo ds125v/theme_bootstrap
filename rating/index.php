@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -33,7 +32,7 @@ $ratingarea = optional_param('ratingarea', null, PARAM_AREA);
 $itemid     = required_param('itemid', PARAM_INT);
 $scaleid    = required_param('scaleid', PARAM_INT);
 $sort       = optional_param('sort', '', PARAM_ALPHA);
-$popup      = optional_param('popup', 0, PARAM_INT); //==1 if in a popup window?
+$popup      = optional_param('popup', 0, PARAM_INT); // ==1 if in a popup window?
 
 list($context, $course, $cm) = get_context_info_array($contextid);
 require_login($course, false, $cm);
@@ -55,10 +54,10 @@ if ($popup) {
     $PAGE->set_pagelayout('popup');
 }
 
-if (!has_capability('moodle/rating:view',$context)) {
+if (!has_capability('moodle/rating:view', $context)) {
     print_error('noviewrate', 'rating');
 }
-if (!has_capability('moodle/rating:viewall',$context) and $USER->id != $item->userid) {
+if (!has_capability('moodle/rating:viewall', $context) and $USER->id != $item->userid) {
     print_error('noviewanyrate', 'rating');
 }
 
@@ -74,7 +73,7 @@ $strrating  = get_string('rating', 'rating');
 $strname    = get_string('name');
 $strtime    = get_string('time');
 
-$PAGE->set_title(get_string('allratingsforitem','rating'));
+$PAGE->set_title(get_string('allratingsforitem', 'rating'));
 echo $OUTPUT->header();
 
 $ratingoptions = new stdClass;
@@ -87,17 +86,15 @@ $ratingoptions->sort = $sqlsort;
 $rm = new rating_manager();
 $ratings = $rm->get_all_ratings_for_item($ratingoptions);
 if (!$ratings) {
-    $msg = get_string('noratings','rating');
-    echo html_writer::tag('div', $msg, array('class'=>'mdl-align'));
+    $msg = get_string('noratings', 'rating');
+    echo $OUTPUT->notification($msg, 'notifyproblem');
 } else {
-    // To get the sort URL, copy the current URL and remove any previous sort
+    // To get the sort URL, copy the current URL and remove any previous sort.
     $sorturl = new moodle_url($url);
     $sorturl->remove_params('sort');
 
     $table = new html_table;
-    $table->cellpadding = 3;
-    $table->cellspacing = 3;
-    $table->attributes['class'] = 'generalbox ratingtable';
+    $table->attributes['class'] = 'generaltable ratingtable';
     $table->head = array(
         '',
         html_writer::link(new moodle_url($sorturl, array('sort' => 'firstname')), $strname),
@@ -107,14 +104,14 @@ if (!$ratings) {
     $table->colclasses = array('', 'firstname', 'rating', 'time');
     $table->data = array();
 
-    // If the scale was changed after ratings were submitted some ratings may have a value above the current maximum
-    // We can't just do count($scalemenu) - 1 as custom scales start at index 1, not 0
+    // If the scale was changed after ratings were submitted some ratings may have a value above the current maximum.
+    // We can't just do count($scalemenu) - 1 as custom scales start at index 1, not 0.
     $maxrating = max(array_keys($scalemenu));
 
     foreach ($ratings as $rating) {
-        //Undo the aliasing of the user id column from user_picture::fields()
-        //we could clone the rating object or preserve the rating id if we needed it again
-        //but we don't
+        // Undo the aliasing of the user id column from user_picture::fields()
+        // we could clone the rating object or preserve the rating id if we needed it again
+        // but we don't.
         $rating->id = $rating->userid;
 
         $row = new html_table_row();
