@@ -120,6 +120,6 @@ class theme_bootstrap_core_admin_renderer extends core_admin_renderer {
     }
     protected function release_notes_link() {
         $releasenoteslink = get_string('releasenoteslink', 'admin', 'http://docs.moodle.org/dev/Releases');
-        return $this->notification($releasenoteslink, 'notifyinfo');
+        return $this->notification($releasenoteslink, 'notifymessage');
     }
 }
