@@ -55,7 +55,7 @@ class theme_bootstrap_core_course_renderer extends core_course_renderer {
         $output .= html_writer::start_div('form-group');
         $output .= html_writer::tag('label', $strsearchcourses, array('for' => $inputid, 'class' => 'sr-only'));
         $search = array('type' => 'text', 'id' => $inputid, 'size' => $inputsize, 'name' => 'search',
-                        'value' => s($value), 'placeholder' => $strsearchcourses);
+                        'class' => 'form-control', 'value' => s($value), 'placeholder' => $strsearchcourses);
         $output .= html_writer::empty_tag('input', $search);
         $output .= html_writer::end_div(); // Close form-group.
         $button = array('type' => 'submit', 'class' => 'btn btn-default');

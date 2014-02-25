@@ -1,21 +1,5 @@
 /* responsive.less */
 
-
-@media (min-width: 980px) {
-    .dir-rtl .navbar .nav.pull-right,
-    .dir-rtl .navbar .logininfo {
-        float: left;
-    }
-    .dir-rtl .navbar .nav {
-        float: right;
-        & > li {
-            float: right;
-        }
-    }
-}
-
-
-
 @media (max-width: 873px) {
     .file-picker .fp-repo-area {
         width: 100%;
@@ -55,7 +39,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: @screen-xs-min) {
     // make tabs act like nav-stacked
     // (mostly) copied from bootstrap/navs.less
     .nav-tabs > li {
@@ -137,12 +121,12 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: @screen-sm-min) {
 // Resize, reflow file-picker on small devices
    #filesskin .yui3-panel,
    #filesskin .file-picker.fp-generallayout {
         width: 100%;
         left: 0;
-    }
+   }
 
 }
