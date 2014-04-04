@@ -7052,6 +7052,8 @@ button.close {
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .userprofile .userprofilebox:before,
 .userprofile .userprofilebox:after,
+.mform .fitem.moreless-actions:before,
+.mform .fitem.moreless-actions:after,
 .mform .fitem_actionbuttons:before,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:before,
@@ -7085,6 +7087,7 @@ button.close {
 .box.message .contactselector form#usergroupform fieldset:after,
 .box.message .messagearea .messagehistory .messagehistory .mdl-left:after,
 .userprofile .userprofilebox:after,
+.mform .fitem.moreless-actions:after,
 .mform .fitem_actionbuttons:after,
 .path-backup .mform .grouped_settings:after,
 .path-backup .mform .grouped_settings .fitem:after,
@@ -16280,54 +16283,71 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
   height: auto;
 }
 
-.mform .fcontainer .fitem .felement.fduration input[type="text"],
-.mform fieldset .fitem .felement.fduration input[type="text"] {
-  min-width: 0;
-  width: 5em;
-  display: inline-block;
-}
-
-.mform .fcontainer .fitem .felement.fduration select,
-.mform fieldset .fitem .felement.fduration select,
-.mform .fcontainer .fitem .felement.fdate_selector select,
-.mform fieldset .fitem .felement.fdate_selector select,
-.mform .fcontainer .fitem .felement.fdate_time_selector select,
-.mform fieldset .fitem .felement.fdate_time_selector select {
+.mform .fcontainer .fitem .fduration select,
+.mform fieldset .fitem .fduration select,
+.mform .fcontainer .fitem .fdate_selector select,
+.mform fieldset .fitem .fdate_selector select,
+.mform .fcontainer .fitem .fdate_time_selector select,
+.mform fieldset .fitem .fdate_time_selector select {
   width: auto;
   display: inline-block;
   min-width: 60px;
 }
 
-.mform .fcontainer .fitem .felement.fduration select[size],
-.mform fieldset .fitem .felement.fduration select[size],
-.mform .fcontainer .fitem .felement.fdate_selector select[size],
-.mform fieldset .fitem .felement.fdate_selector select[size],
-.mform .fcontainer .fitem .felement.fdate_time_selector select[size],
-.mform fieldset .fitem .felement.fdate_time_selector select[size],
-.mform .fcontainer .fitem .felement.fduration select[multiple],
-.mform fieldset .fitem .felement.fduration select[multiple],
-.mform .fcontainer .fitem .felement.fdate_selector select[multiple],
-.mform fieldset .fitem .felement.fdate_selector select[multiple],
-.mform .fcontainer .fitem .felement.fdate_time_selector select[multiple],
-.mform fieldset .fitem .felement.fdate_time_selector select[multiple] {
+.mform .fcontainer .fitem .fduration select[size],
+.mform fieldset .fitem .fduration select[size],
+.mform .fcontainer .fitem .fdate_selector select[size],
+.mform fieldset .fitem .fdate_selector select[size],
+.mform .fcontainer .fitem .fdate_time_selector select[size],
+.mform fieldset .fitem .fdate_time_selector select[size],
+.mform .fcontainer .fitem .fduration select[multiple],
+.mform fieldset .fitem .fduration select[multiple],
+.mform .fcontainer .fitem .fdate_selector select[multiple],
+.mform fieldset .fitem .fdate_selector select[multiple],
+.mform .fcontainer .fitem .fdate_time_selector select[multiple],
+.mform fieldset .fitem .fdate_time_selector select[multiple] {
   height: auto;
 }
 
-.mform .fcontainer .fitem .felement.fduration label,
-.mform fieldset .fitem .felement.fduration label,
-.mform .fcontainer .fitem .felement.fdate_selector label,
-.mform fieldset .fitem .felement.fdate_selector label,
-.mform .fcontainer .fitem .felement.fdate_time_selector label,
-.mform fieldset .fitem .felement.fdate_time_selector label {
+.mform .fcontainer .fitem .fduration label,
+.mform fieldset .fitem .fduration label,
+.mform .fcontainer .fitem .fdate_selector label,
+.mform fieldset .fitem .fdate_selector label,
+.mform .fcontainer .fitem .fdate_time_selector label,
+.mform fieldset .fitem .fdate_time_selector label {
   display: inline-block;
 }
 
+.mform .fcontainer .fitem .fduration input[type="text"],
+.mform fieldset .fitem .fduration input[type="text"],
+.mform .fcontainer .fitem .fdate_selector input[type="text"],
+.mform fieldset .fitem .fdate_selector input[type="text"],
+.mform .fcontainer .fitem .fdate_time_selector input[type="text"],
+.mform fieldset .fitem .fdate_time_selector input[type="text"] {
+  min-width: 0;
+  width: 5em;
+  display: inline-block;
+}
+
+.mform .fcontainer .fitem .fdate_selector,
+.mform fieldset .fitem .fdate_selector {
+  margin-right: 1em;
+}
+
+.mform .fcontainer .fitem .fdate_selector:nth-of-type(2),
+.mform fieldset .fitem .fdate_selector:nth-of-type(2) {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.mform .fitem.moreless-actions,
 .mform .fitem_actionbuttons {
   margin-bottom: 15px;
   margin-right: -15px;
   margin-left: -15px;
 }
 
+.mform .fitem.moreless-actions > div.felement,
 .mform .fitem_actionbuttons > div.felement {
   position: relative;
   min-height: 1px;
@@ -16336,6 +16356,7 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 @media (min-width: 992px) {
+  .mform .fitem.moreless-actions > div.felement,
   .mform .fitem_actionbuttons > div.felement {
     float: right;
     width: 66.66666667%;
@@ -16343,12 +16364,14 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 @media (min-width: 992px) {
+  .mform .fitem.moreless-actions > div.felement,
   .mform .fitem_actionbuttons > div.felement {
     margin-right: 33.33333333%;
   }
 }
 
 @media (min-width: 1200px) {
+  .mform .fitem.moreless-actions > div.felement,
   .mform .fitem_actionbuttons > div.felement {
     float: right;
     width: 75%;
@@ -16356,6 +16379,7 @@ textarea.mform fieldset .fitem .felement input[type="password"] {
 }
 
 @media (min-width: 1200px) {
+  .mform .fitem.moreless-actions > div.felement,
   .mform .fitem_actionbuttons > div.felement {
     margin-right: 25%;
   }
@@ -16586,6 +16610,12 @@ textarea.form-item .form-setting input[type="password"] {
   font-size: 12px;
 }
 
+.fitem.fitem_fgroup .felement.fgroup select:nth-of-type(2),
+.fitem.fitem_fgroup .felement.fgroup input {
+  margin-top: 5px;
+}
+
+.fitem.fitem_fgroup .felement.fgroup span > input[type="checkbox"],
 .form-setting .form-checkbox input {
   margin-top: 12px;
 }
@@ -16673,88 +16703,6 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: 0 4px;
 }
-
-/*
-.mform .fitem fieldset.fgroup label {
-    // see .felement.fdate_selector above
-    display: inline;
-    float: none;
-    width: auto;
-}
-.mform ul.file-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.mform .ftags label.accesshide {
-    display: block;
-    position: static;
-}
-.mform .ftags select {
-    margin-bottom: 0.7em;
-    min-width: 22em;
-}
-.mform .helplink img {
-    margin: 0 .45em;
-    padding: 0;
-}
-
-form input[type="text"] {
-   .form-control;
-   display: inline-block;
-   width: auto;
-   height: auto;
-}
-
-.loginpanel .error,
-.singleselect label {
-    margin-right: .3em;
-}
-#portfolio-add-button {
-    display: inline;
-}
-
-
-#page-grade-edit-outcome-course .courseoutcomes {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#page-grade-edit-outcome-course .courseoutcomes td {
-    text-align:center;
-}
-
-// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
-// Moodle puts it beside the label, so we need to make it inline-block
-// to keep it on the same horizontal level.
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-    display: inline;
-    padding-left: 0.2em;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin-top: -4px; // Dodgy hack, must be better way.
-    margin-right: 7px;
-}
-.singleselect {
-    display: inline-block;
-    form,
-    select{
-        margin: 0;
-    }
-}
-.felement.ffilepicker {
-    margin-top: 5px;
-}
-div#dateselector-calendar-panel {
-    z-index: 3100; // Set higher than the z-index of the filemanager - see MDL-39047.
-}
-
-fieldset.coursesearchbox label {
-    display: inline;
-}
-*/
 
 /* modules.less */
 

@@ -25,14 +25,9 @@
             select[multiple], select[size] {
                 height: auto;
             }
-            .felement.fduration input[type="text"] {
-                min-width: 0;
-                width: 5em;
-                display: inline-block;
-            }
-            .felement.fduration,
-            .felement.fdate_selector,
-            .felement.fdate_time_selector {
+            .fduration,
+            .fdate_selector,
+            .fdate_time_selector {
                 select {
                     width: auto;
                     display: inline-block;
@@ -45,9 +40,22 @@
                 label {
                     display: inline-block;
                 }
+                input[type="text"] {
+                    min-width: 0;
+                    width: 5em;
+                    display: inline-block;
+                }
+            }
+            .fdate_selector {
+                margin-left: 1em;
+            }
+            .fdate_selector:nth-of-type(2) {
+                display: inline-block;
+                margin-top: 5px;
             }
         }
     }
+    .fitem.moreless-actions,
     .fitem_actionbuttons {
             .form-group;
             .form-horizontal .form-group;
@@ -173,6 +181,14 @@
     &:extend(legend);
 }
 
+.fitem.fitem_fgroup .felement.fgroup {
+    select:nth-of-type(2),
+    input {
+        margin-top: 5px;
+    }
+}
+
+.fitem.fitem_fgroup .felement.fgroup span > input[type="checkbox"],
 .form-setting .form-checkbox input {
     margin-top: 12px;
 }
@@ -260,85 +276,3 @@ input[type="radio"],
 input[type="checkbox"] {
     margin: 0 4px;
 }
-/*
-.mform .fitem fieldset.fgroup label {
-    // see .felement.fdate_selector above
-    display: inline;
-    float: none;
-    width: auto;
-}
-.mform ul.file-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.mform .ftags label.accesshide {
-    display: block;
-    position: static;
-}
-.mform .ftags select {
-    margin-bottom: 0.7em;
-    min-width: 22em;
-}
-.mform .helplink img {
-    margin: 0 .45em;
-    padding: 0;
-}
-
-form input[type="text"] {
-   .form-control;
-   display: inline-block;
-   width: auto;
-   height: auto;
-}
-
-.loginpanel .error,
-.singleselect label {
-    margin-right: .3em;
-}
-#portfolio-add-button {
-    display: inline;
-}
-
-
-#page-grade-edit-outcome-course .courseoutcomes {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-#page-grade-edit-outcome-course .courseoutcomes td {
-    text-align:center;
-}
-
-// Checkbox labels. Bootstrap puts the associated checkbox inside the label.
-// Moodle puts it beside the label, so we need to make it inline-block
-// to keep it on the same horizontal level.
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-    display: inline;
-    padding-left: 0.2em;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin-top: -4px; // Dodgy hack, must be better way.
-    margin-right: 7px;
-}
-.singleselect {
-    display: inline-block;
-    form,
-    select{
-        margin: 0;
-    }
-}
-.felement.ffilepicker {
-    margin-top: 5px;
-}
-div#dateselector-calendar-panel {
-    z-index: 3100; // Set higher than the z-index of the filemanager - see MDL-39047.
-}
-
-fieldset.coursesearchbox label {
-    display: inline;
-}
-*/
-
